@@ -11,9 +11,18 @@ const tinderUser = {}
 tinderUser.id = "123abc"
 tinderUser.name = "Sunny"
 tinderUser.isloggedIn = true
-console.log(tinderUser)
 
-console.log(Object.keys(tinderUser))
-console.log(Object.values(tinderUser))
-console.log(Object.entries(tinderUser))
-console.log(tinderUser.hasOwnProperty('isloggedIn'))
+// console.log(tinderUser)
+// console.log(Object.keys(tinderUser))
+// console.log(Object.values(tinderUser))
+// console.log(Object.entries(tinderUser))
+// console.log(tinderUser.hasOwnProperty('isloggedIn'))
+
+const course = {
+    courseName: "Js",
+    price:"999",
+    courseInstructor: "Kapil"
+}
+
+const {courseInstructor : instructor} = course //Destructuring
+console.log(instructor)
