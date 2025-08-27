@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body style="background-color: #1a1919; color: rgb(164, 161, 161);">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="Images">
+            <li><img id="img1" src="1.jpeg" alt="Eye" width="300"></li>
+            <li><img id="img2" src="2.jpeg" alt="Man" width="300"></li>
+            <li><img id="img3" src="3.jpeg" alt="Tiger" width="300"></li>
+            <li><img id="img4" src="4.jpeg" alt="Sun Rise" width="300"></li>
+            <li><img id="img5" src="5.jpeg" alt="Mountain Lake" width="300"></li>
+            <li><a id="Google" href="https://www.google.com" target="_blank" style="color: #a4a1a1;">Google Website</a>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // const eye = document.getElementById("img1").addEventListener("click", function(e){
+    //     alert("You clicked on the eye image!");
+    //     console.log(e);
+    // });
+    // document.getElementById("Images").addEventListener("click", function(e){
+    //     console.log("You clicked inside the ul element!");
+    // },false);
+    // document.getElementById("img1").addEventListener("click", function(e){
+    //     console.log("You clicked on the eye image!");
+    //     e.stopPropagation(); //This will stop the event from bubbling up to the parent element
+    // },false); //False is Event Bubbling and will move from inner to outer element and True is Event Capturing and will move from outer to inner element
+    // document.getElementById("Google").addEventListener("click", function(e){
+    //     e.preventDefault(); //This will prevent the default action of the event
+    //     e.stopPropagation();
+    //     console.log("You clicked on the Google link!");
+    // });
+    document.querySelector("#Images").addEventListener("click", function (e) {
+        console.log(e.target.parentNode);
+        if (e.target.tagName === "IMG") //This will check if the clicked element is an image
+        {
+            console.log("You clicked on the image!");
+            const removeIt = e.target.parentNode;
+            // removeIt.remove();
+            removeIt.parentNode.removeChild(removeIt); //This will remove the clicked image from the DOM and both methods work fine
+        }
+        
+    });
+</script>
+
+</html>
