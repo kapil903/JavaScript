@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+
+<body>
+    <button id="STOP">STOP</button>
+    <button id="Start">Start</button>
+</body>
+<Script>
+    let intervalId;
+    const text  = function(){
+        console.log("Kapil", Date.now())
+    }
+    const startInterval = function(){
+        intervalId = setInterval(text, 1000)
+    }
+    const stopInterval = function(){
+        clearInterval(intervalId)
+    }
+    document.querySelector('#Start').addEventListener('click', function(){
+        startInterval();
+    })
+    document.querySelector('#STOP').addEventListener('click', function(){
+        stopInterval();
+    })
+    </Script>
+
+</html>

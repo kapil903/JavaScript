@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Finder</title>
+    <style>
+        table {
+            width: 350px;
+            margin: 30px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            padding: 12px 18px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #f4f4f4;
+            font-weight: bold;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="insert">
+        <div class="key">Press the key and watch magic</div>
+    </div>
+</body>
+<script>
+    const insert = document.getElementById('insert')
+    window.addEventListener('keydown', (e) => {
+        insert.innerHTML = `
+        <div>
+            <table>
+  <tr>
+    <th>Key</th>
+    <th>KeyCode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key === " " ? "Space" : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+  
+</table></div>
+        
+        
+        `
+    });
+</script>
+
+</html>
